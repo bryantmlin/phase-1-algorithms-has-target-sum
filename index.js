@@ -1,5 +1,17 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  copyOfArray = [...array]
+  for (let iteration of array) {
+    let summed = 0
+    copyOfArray.shift()
+    for (let toAdd of copyOfArray) {
+      summed= iteration+toAdd
+      console.log(summed)
+      if (summed === target) {
+        return true
+      }
+    }
+  }
+  return false
 }
 
 /* 
@@ -8,6 +20,10 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  first needs to add rest of array and check
+  second needs to add 3rd to rest
+  3rd needs to add 4th to rest
+  once =, return true else return false
 */
 
 /*
